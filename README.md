@@ -56,6 +56,15 @@ docker exec -d rpi-qemu make runQEMU -C ./ejercicio1/
 docker exec -d rpi-qemu make runQEMU -C ./ejercicio2/
 ```
 
+ * Para debuggear con gdb (por ej. el ejercicio 1) tienen que correr el qemu en modo debug:
+```bash
+docker exec -d rpi-qemu make runQEMU_debug -C ./ejercicio1/
+```
+y luego el docker en modo iterativo y adentro el gdb:
+```bash
+docker exec -it rpi-qemu make runGDB -C ./ejercicio1/
+```
+
  * Para terminar el container
 ```bash
 docker kill rpi-qemu
