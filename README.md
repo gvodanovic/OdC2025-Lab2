@@ -80,5 +80,4 @@ docker exec -it rpi-qemu /bin/bash
 ```
 
 ### MacOS
-En MacOS primero tienen que [instalar un X server](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb) (i.e. XQuartz)
- * Para construir el container hacer
+En MacOS primero tienen que [instalar un X server](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb) (se recomienda XQuartz). Además, se deben permitir las conexiones de clientes de red, esto se hace entrando a los ajustes del XQuartz, en la pestaña de Seguridad. Luego los comandos para correr el docker, el emulador, el gdb, etc. son iguales que en linux
