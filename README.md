@@ -46,18 +46,20 @@ docker build -t famaf/rpi-qemu .
 xhost +
 docker run -dt --name rpi-qemu --rm -v $(pwd):/local --privileged -e "DISPLAY=${DISPLAY:-:0.0}" -v /tmp/.X11-unix:/tmp/.X11-unix -v "$HOME/.Xauthority:/root/.Xauthority:rw" famaf/rpi-qemu
 ```
- * Para correr el emulador
+ * Para correr el emulador para el ejericico 1:
 ```bash
-docker exec -d rpi-qemu make runQEMU
+docker exec -d rpi-qemu make runQEMU -C ./ejercicio1/
 ```
+
+ * Para correr el emulador para el ejericico 2:
+```bash
+docker exec -d rpi-qemu make runQEMU -C ./ejercicio2/
+```
+
  * Para terminar el container
 ```bash
 docker kill rpi-qemu
 ```
-
-### MacOS
-En MacOS primero tienen que [instalar un X server](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb) (i.e. XQuartz)
- * Para construir el container hacer
 
 ----------------------------------
 ### Otros comandos utiles
@@ -67,3 +69,7 @@ docker run -it --rm -v $(pwd):/local --privileged -e "DISPLAY=${DISPLAY:-:0.0}" 
 # Correr un shell en el container
 docker exec -it rpi-qemu /bin/bash
 ```
+
+### MacOS
+En MacOS primero tienen que [instalar un X server](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb) (i.e. XQuartz)
+ * Para construir el container hacer
